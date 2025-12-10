@@ -1,5 +1,5 @@
-### 1. 模组为游戏添加了三种类型的钱币、能收纳钱币且能在物品栏实时显示内容的钱袋，同时支持在HUD显示背包内钱币数量（包括钱袋内钱币）
-Yo's Coins mod adds three types of currency, a wallet that can store currency and display its contents in real time in the inventory, and supports displaying the amount of currency in the backpack (including currency in the wallet) on the HUD.
+### 1. Yo's Coins是一个轻量化我的世界货币模组，为游戏添加了三种类型的钱币、能收纳钱币且能在物品栏实时显示内容的钱袋，同时支持在HUD显示背包内钱币数量（包括钱袋内钱币）
+Yo’s Coins is a lightweight currency mod for Minecraft that adds three types of coins to the game. It includes money bags that can store coins and display their contents in real-time within the inventory, as well as the option to show the number of coins in the backpack on the HUD (including those inside the money bags).
 
 <img width="296" height="128" alt="b9e4301851d57983dce354de05d3d0ff" src="https://github.com/user-attachments/assets/b2b44f0e-dcd2-4f74-8d5b-8aa2ff600d33" />
 
@@ -28,6 +28,8 @@ The HUD can be configured in the corresponding interface within the Mod Menu, wh
 
 <img width="546" height="272" alt="5545b2d64dadcfd47835625ee0fd73f9" src="https://github.com/user-attachments/assets/fb3a6953-777c-4066-8804-093d34a6d24d" />
 
-
 ### 5. 需要模组菜单（modmenu）7.2.2及以上版本
 Modmenu 7.2.2 or later is required
+
+### 6. 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14
+Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported
