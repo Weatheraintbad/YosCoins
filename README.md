@@ -30,5 +30,5 @@ The HUD can be configured in the corresponding interface within the Mod Menu, wh
 
 <img width="546" height="272" alt="5545b2d64dadcfd47835625ee0fd73f9" src="https://github.com/user-attachments/assets/fb3a6953-777c-4066-8804-093d34a6d24d" />
 
-### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14，需要模组菜单（modmenu）7.2.2版本
-Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported, Modmenu 7.2.2 is required
+### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14，需要模组菜单[modmenu 7.2.2](https://modrinth.com/mod/modmenu)版本
+Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported, [modmenu 7.2.2](https://modrinth.com/mod/modmenu) is required
