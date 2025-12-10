@@ -26,10 +26,10 @@ Coins are not craftable, but can be exchanged in the crafting table, and money p
 ### 玩家手持钱袋右键可将背包内的钱币收纳至钱袋中，鼠标移至钱袋上可显示钱袋内钱币的数量
 Players can right-click on their money pouch to transfer coins from their in-game backpacks to the money bags. Moving the mouse over the money pouch will display the amount of coins contained within it.
 
+<img width="286" height="208" alt="c68bcc0c6e9be89d87a1890f91c2ff57" src="https://github.com/user-attachments/assets/8758f38e-d33f-4169-a127-bb3b8c590d28" />
+
 ### 存钱罐放置后手持钱币右键即可存入，存入后的钱币数量将不会显示，打破存钱罐后会以掉落物的形式返还。（就像真的一样！）
 After placing the piggy bank, you can deposit it by holding the coin right-click, and the number of coins after depositing will not be displayed, and it will be returned in the form of a drop after breaking the piggy bank. (Just like the real one!) ）
-
-<img width="286" height="208" alt="c68bcc0c6e9be89d87a1890f91c2ff57" src="https://github.com/user-attachments/assets/8758f38e-d33f-4169-a127-bb3b8c590d28" />
 
 ### HUD可在模组菜单（modmenu）中对应的界面配置，可开关或调整HUD在屏幕显示的位置
 The HUD can be configured in the corresponding interface within the Mod Menu, where you can enable/disable it or adjust its position on the screen.
