@@ -1,5 +1,6 @@
 {
   "itemGroup.yoscoins.coin": "Yo's Coins",
+  "block.yoscoins.piggy_bank": "存钱罐",
   "item.yoscoins.money_pouch": "钱袋",
   "tooltip.yoscoins.money_pouch.empty": "§7空袋 - 右键收起钱币",
   "tooltip.yoscoins.money_pouch.copper": "§6铜币: %d",

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "yoscoins:block/piggy_bank", "y": 180 },
+    "facing=south": { "model": "yoscoins:block/piggy_bank", "y": 0 },
+    "facing=west":  { "model": "yoscoins:block/piggy_bank", "y": 90 },
+    "facing=east":  { "model": "yoscoins:block/piggy_bank", "y": 270 }
+  }
+}

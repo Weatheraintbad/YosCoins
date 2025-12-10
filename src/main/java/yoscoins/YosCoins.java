@@ -3,6 +3,8 @@ package yoscoins;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import yoscoins.init.ModScreens;
+import yoscoins.init.YosCoinsBlockEntities;
+import yoscoins.init.YosCoinsBlocks;
 import yoscoins.init.YosCoinsItems;
 import yoscoins.client.hud.YosCoinsHud;
 import net.fabricmc.api.ClientModInitializer;
@@ -18,6 +20,9 @@ public class YosCoins implements ModInitializer, ClientModInitializer {
         LOGGER.info("[{}] Common initialization started", MOD_ID);
         YosCoinsItems.onInitialize();   // 硬币 + 钱袋物品
         ModScreens.init();              // ScreenHandler
+        YosCoinsBlocks.onInitialize();
+        YosCoinsBlockEntities.onInitialize();
+
     }
 
     /* 客户端初始化 */

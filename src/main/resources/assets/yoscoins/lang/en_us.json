@@ -1,5 +1,6 @@
 {
   "itemGroup.yoscoins.coin": "Yo's Coins",
+  "block.yoscoins.piggy_bank": "Piggy Bank",
   "item.yoscoins.money_pouch": "Money Pouch",
   "tooltip.yoscoins.money_pouch.empty": "§7Empty - Right-click to collect coins",
   "tooltip.yoscoins.money_pouch.copper": "§6Copper: %d",
