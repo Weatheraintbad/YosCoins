@@ -1,5 +1,5 @@
 ### 1. Yo's Coins是一个轻量化我的世界货币模组，为游戏添加了三种类型的钱币、能收纳钱币且能在物品栏实时显示内容的钱袋，同时支持在HUD显示背包内钱币数量（包括钱袋内钱币）
-Yo’s Coins is a lightweight currency mod for Minecraft that adds three types of coins to the game. It includes money bags that can store coins and display their contents in real-time within the inventory, as well as the option to show the number of coins in the backpack on the HUD (including those inside the money bags).
+Yo’s Coins is a lightweight currency mod for Minecraft that adds three types of coins to the game. It includes money pouch that can store coins and display their contents in real-time within the inventory, as well as the option to show the number of coins in the backpack on the HUD (including those inside the money pouch).
 
 <img width="296" height="128" alt="b9e4301851d57983dce354de05d3d0ff" src="https://github.com/user-attachments/assets/b2b44f0e-dcd2-4f74-8d5b-8aa2ff600d33" />
 
