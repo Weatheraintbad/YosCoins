@@ -33,4 +33,4 @@ The HUD can be configured in the corresponding interface within the Mod Menu, wh
 ### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14，需要模组菜单[modmenu 7.2.2](https://modrinth.com/mod/modmenu)版本
 Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported, [modmenu 7.2.2](https://modrinth.com/mod/modmenu) is required
 
-### 感谢MC百科“不明情况的白”绘制的图标
+### 感谢MC百科[不明情况的白](https://center.mcmod.cn/10635/)绘制的图标
