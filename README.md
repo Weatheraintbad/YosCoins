@@ -21,7 +21,7 @@ Coins are not craftable, but can be exchanged in the crafting table, and money p
 <img width="540" height="224" alt="a76722710898cc41cbfb64f04685356e" src="https://github.com/user-attachments/assets/eee162a9-9159-46d4-bbd4-6727a9695de0" />
 
 ### 玩家手持钱袋右键可将背包内的钱币收纳至钱袋中，鼠标移至钱袋上可显示钱袋内钱币的数量
-Players can right-click on their money pouchto transfer coins from their in-game backpacks to the money bags. Moving the mouse over the money bag will display the amount of coins contained within it.
+Players can right-click on their money pouchto transfer coins from their in-game backpacks to the money bags. Moving the mouse over the money pouch will display the amount of coins contained within it.
 
 <img width="286" height="208" alt="c68bcc0c6e9be89d87a1890f91c2ff57" src="https://github.com/user-attachments/assets/8758f38e-d33f-4169-a127-bb3b8c590d28" />
 
