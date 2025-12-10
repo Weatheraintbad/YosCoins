@@ -19,7 +19,7 @@ public final class YosCoinsConfig {
 
     public int hudOffsetX = 0;   // 相对锚点 X 偏移（像素）
     public int hudOffsetY = 0;   // 相对锚点 Y 偏移（像素）
-    public boolean hudTopRight = true; // true=右上角 false=左上角
+    public boolean hudTopRight = true; // true=右上角 false=左上角，右上角还是有点问题，会跑到界面外
     public boolean hudEnabled = true;   //开关
 
     /* 统一入口：加载后自动刷新 HUD */
@@ -32,14 +32,14 @@ public final class YosCoinsConfig {
                 cfg.hudOffsetY  = json.get("hudOffsetY").getAsInt();
                 cfg.hudTopRight = json.get("hudTopRight").getAsBoolean();
             } catch (Exception e) {
-                // 文件损坏 → 用默认
+                // 文件损坏问题，换成默认
             }
         }
-        cfg.save();          // 写回（含默认值）
+        cfg.save();
         return cfg;
     }
 
-    /** 写盘 + 立即刷新运行时实例 & HUD */
+
     public void save() {
         try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
             JsonObject json = new JsonObject();
@@ -51,8 +51,7 @@ public final class YosCoinsConfig {
             e.printStackTrace();
         }
 
-        /* 关键：把最新自己设回客户端，并通知 HUD 重新读字段 */
-        YosCoinsClient.setConfig(this);   // 见下方
+        YosCoinsClient.setConfig(this);
         YosCoinsHud.INSTANCE.reloadConfig();
     }
 }
