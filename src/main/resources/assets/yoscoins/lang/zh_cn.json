@@ -1,0 +1,17 @@
+{
+  "itemGroup.yoscoins.coin": "Yo's Coins",
+  "item.yoscoins.money_pouch": "钱袋",
+  "tooltip.yoscoins.money_pouch.empty": "§7空袋 - 右键收起钱币",
+  "tooltip.yoscoins.money_pouch.copper": "§6铜币: %d",
+  "tooltip.yoscoins.money_pouch.silver": "§f银币: %d",
+  "tooltip.yoscoins.money_pouch.gold":   "§e金币: %d",
+  "item.yoscoins.copper_coin": "铜币",
+  "item.yoscoins.silver_coin": "银币",
+  "item.yoscoins.gold_coin":   "金币",
+  "screen.yoscoins.hud_config": "Yo的钱币 - HUD设置",
+  "screen.yoscoins.offset_x": "水平偏移（像素）",
+  "screen.yoscoins.offset_y": "垂直偏移（像素）",
+  "screen.yoscoins.top_right": "右上角",
+  "screen.yoscoins.top_left": "左上角",
+  "screen.yoscoins.save": "保存"
+}

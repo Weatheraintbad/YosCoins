@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "yoscoins:gold_coin"
+    }
+  ],
+  "result": {
+    "item": "yoscoins:silver_coin",
+    "count": 9
+  }
+}

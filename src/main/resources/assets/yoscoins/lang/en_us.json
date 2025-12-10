@@ -1,0 +1,17 @@
+{
+  "itemGroup.yoscoins.coin": "Yo's Coins",
+  "item.yoscoins.money_pouch": "Money Pouch",
+  "tooltip.yoscoins.money_pouch.empty": "§7Empty - Right-click to collect coins",
+  "tooltip.yoscoins.money_pouch.copper": "§6Copper: %d",
+  "tooltip.yoscoins.money_pouch.silver": "§fSilver: %d",
+  "tooltip.yoscoins.money_pouch.gold":   "§eGold: %d",
+  "item.yoscoins.copper_coin": "Copper Coin",
+  "item.yoscoins.silver_coin": "Silver Coin",
+  "item.yoscoins.gold_coin":   "Gold Coin",
+  "screen.yoscoins.hud_config": "Yos's Coins - HUD Settings",
+  "screen.yoscoins.offset_x": "Horizontal Offset (pixels)",
+  "screen.yoscoins.offset_y": "Vertical Offset (pixels)",
+  "screen.yoscoins.top_right": "Top Right",
+  "screen.yoscoins.top_left": "Top Left",
+  "screen.yoscoins.save": "Save"
+}

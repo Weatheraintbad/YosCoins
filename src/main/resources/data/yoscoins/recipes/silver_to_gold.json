@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "yoscoins:silver_coin"
+    }
+  },
+  "result": {
+    "item": "yoscoins:gold_coin",
+    "count": 1
+  }
+}
