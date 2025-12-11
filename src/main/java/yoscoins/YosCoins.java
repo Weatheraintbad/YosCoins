@@ -9,6 +9,7 @@ import yoscoins.init.YosCoinsItems;
 import yoscoins.client.hud.YosCoinsHud;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
+import yoscoins.networking.YosCoinsNetworking;
 
 public class YosCoins implements ModInitializer, ClientModInitializer {
     public static final String MOD_ID = "yoscoins";
@@ -30,5 +31,6 @@ public class YosCoins implements ModInitializer, ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.info("[{}] Client initialization started", MOD_ID);
         YosCoinsHud.register();         // 仅客户端渲染
+        YosCoinsNetworking.registerClientReceivers();
     }
 }
