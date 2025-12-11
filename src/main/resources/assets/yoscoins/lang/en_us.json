@@ -9,10 +9,8 @@
   "item.yoscoins.copper_coin": "Copper Coin",
   "item.yoscoins.silver_coin": "Silver Coin",
   "item.yoscoins.gold_coin":   "Gold Coin",
-  "screen.yoscoins.hud_config": "Yos's Coins - HUD Settings",
+  "screen.yoscoins.hud_config": "Yo's Coins - HUD Settings",
   "screen.yoscoins.offset_x": "Horizontal Offset (pixels)",
   "screen.yoscoins.offset_y": "Vertical Offset (pixels)",
-  "screen.yoscoins.top_right": "Top Right",
-  "screen.yoscoins.top_left": "Top Left",
   "screen.yoscoins.save": "Save"
 }

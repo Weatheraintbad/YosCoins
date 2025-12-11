@@ -1,26 +1,33 @@
 package yoscoins.client.screen;
 
-
 import yoscoins.client.YosCoinsClient;
+import yoscoins.client.hud.YosCoinsHud;
+import yoscoins.config.YosCoinsConfig;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.Text;
-import yoscoins.client.hud.YosCoinsHud;
-import yoscoins.config.YosCoinsConfig;
-
 
 public class HudConfigScreen extends Screen {
 
-    private static final Text TITLE       = Text.translatable("screen.yoscoins.hud_config");
-    private static final Text OFFSET_X    = Text.translatable("screen.yoscoins.offset_x");
-    private static final Text OFFSET_Y    = Text.translatable("screen.yoscoins.offset_y");
-    private static final Text TOP_RIGHT   = Text.translatable("screen.yoscoins.top_right");
+    private static final Text TITLE    = Text.translatable("screen.yoscoins.hud_config");
+    private static final Text OFFSET_X = Text.translatable("screen.yoscoins.offset_x");
+    private static final Text OFFSET_Y = Text.translatable("screen.yoscoins.offset_y");
 
     private TextFieldWidget offsetXField;
     private TextFieldWidget offsetYField;
-    private ButtonWidget    topRightBtn;
+    private YosCoinsConfig liveCfg;
+
+    /* 尺寸与 1.1 倍间距 */
+    private static final int FIELD_W = 200;
+    private static final int FIELD_H = 20;
+    private static final int BUTTON_W = 200;
+    private static final int BUTTON_H = 20;
+    private static final float GAP_MUL = 1.1f;
+    private static final int LABEL_H = 12;                 // 文字高度
+    private static final int LABEL_GAP = (int)(8 * GAP_MUL);
+    private static final int CTRL_GAP  = (int)(18 * GAP_MUL);
 
     public HudConfigScreen() {
         super(TITLE);
@@ -28,56 +35,74 @@ public class HudConfigScreen extends Screen {
 
     @Override
     protected void init() {
-        // 加载最新配置
-        YosCoinsConfig cfg = YosCoinsClient.getConfig();
+        liveCfg = YosCoinsClient.getConfig();
 
-        offsetXField = new TextFieldWidget(textRenderer, width / 2 - 100, 60, 200, 20, OFFSET_X);
-        offsetXField.setText(String.valueOf(cfg.hudOffsetX));
+        int centerX = width / 2;
+        int y = 60;
+
+        /* ---- X 偏移 ---- */
+        y += LABEL_H;
+        offsetXField = new TextFieldWidget(textRenderer, centerX - FIELD_W / 2, y, FIELD_W, FIELD_H, OFFSET_X);
+        offsetXField.setText(String.valueOf(liveCfg.hudOffsetX));
+        offsetXField.setChangedListener(str -> applyPreview());
         addDrawableChild(offsetXField);
 
-        offsetYField = new TextFieldWidget(textRenderer, width / 2 - 100, 90, 200, 20, OFFSET_Y);
-        offsetYField.setText(String.valueOf(cfg.hudOffsetY));
+        y += FIELD_H + LABEL_GAP;
+
+        /* ---- Y 偏移 ---- */
+        y += LABEL_H;
+        offsetYField = new TextFieldWidget(textRenderer, centerX - FIELD_W / 2, y, FIELD_W, FIELD_H, OFFSET_Y);
+        offsetYField.setText(String.valueOf(liveCfg.hudOffsetY));
+        offsetYField.setChangedListener(str -> applyPreview());
         addDrawableChild(offsetYField);
 
-        topRightBtn = ButtonWidget.builder(
-                cfg.hudTopRight ? TOP_RIGHT : Text.translatable("screen.yoscoins.top_left"),
-                b -> {
-                    cfg.hudTopRight = !cfg.hudTopRight;
-                    b.setMessage(cfg.hudTopRight ? TOP_RIGHT : Text.translatable("screen.yoscoins.top_left"));
-                }).dimensions(width / 2 - 100, 120, 200, 20).build();
-        addDrawableChild(topRightBtn);
+        y += FIELD_H + CTRL_GAP;
 
+        /* ---- 显示 / 隐藏 ---- */
         ButtonWidget enabledBtn = ButtonWidget.builder(
-                cfg.hudEnabled ? Text.literal("显示") : Text.literal("隐藏"),
+                liveCfg.hudEnabled ? Text.literal("已显示") : Text.literal("已隐藏"),
                 b -> {
-                    cfg.hudEnabled = !cfg.hudEnabled;
-                    b.setMessage(cfg.hudEnabled ? Text.literal("显示") : Text.literal("隐藏"));
-                }).dimensions(width / 2 - 100, 150, 200, 20).build();
+                    liveCfg.hudEnabled = !liveCfg.hudEnabled;
+                    b.setMessage(liveCfg.hudEnabled ? Text.literal("已显示") : Text.literal("已隐藏"));
+                    YosCoinsHud.reloadConfig();
+                }).dimensions(centerX - BUTTON_W / 2, y, BUTTON_W, BUTTON_H).build();
         addDrawableChild(enabledBtn);
 
-        // 保存并立即刷新
+        y += BUTTON_H + CTRL_GAP;
+
+        /* ---- 保存 ---- */
         addDrawableChild(ButtonWidget.builder(
                 Text.translatable("screen.yoscoins.save"),
                 b -> {
                     try {
-                        cfg.hudOffsetX  = Integer.parseInt(offsetXField.getText());
-                        cfg.hudOffsetY  = Integer.parseInt(offsetYField.getText());
-                        cfg.hudTopRight = topRightBtn.getMessage().equals(TOP_RIGHT);
-                        cfg.hudEnabled  = enabledBtn.getMessage().equals(Text.literal("显示"));
-
-                        cfg.save();                          // 写盘
-                        YosCoinsHud.INSTANCE.reloadConfig(); // 立即通知 HUD
+                        liveCfg.hudOffsetX = Integer.parseInt(offsetXField.getText());
+                        liveCfg.hudOffsetY = Integer.parseInt(offsetYField.getText());
+                        liveCfg.save();
                         close();
-                    } catch (NumberFormatException ignore) {}
-                }).dimensions(width / 2 - 100, height - 30, 200, 20).build());
+                    } catch (NumberFormatException ignored) {}
+                }).dimensions(centerX - BUTTON_W / 2, y, BUTTON_W, BUTTON_H).build());
+    }
+
+    private void applyPreview() {
+        try {
+            liveCfg.hudOffsetX = Integer.parseInt(offsetXField.getText());
+            liveCfg.hudOffsetY = Integer.parseInt(offsetYField.getText());
+            YosCoinsHud.reloadConfig();
+        } catch (NumberFormatException ignored) {}
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        context.fill(0, 0, width, height, 0x4D000000);
-        context.drawCenteredTextWithShadow(textRenderer, title, width / 2, 20, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(textRenderer, OFFSET_X, width / 2 - 100, 50, 0xFFFFFF);
-        context.drawCenteredTextWithShadow(textRenderer, OFFSET_Y, width / 2 - 100, 80, 0xFFFFFF);
-        super.render(context, mouseX, mouseY, delta);
+    public void render(DrawContext ctx, int mouseX, int mouseY, float delta) {
+        renderBackground(ctx);
+        ctx.drawCenteredTextWithShadow(textRenderer, title, width / 2, 20, 0xFFFFFF);
+
+        /* 手动绘制透明标签 */
+        int centerX = width / 2;
+        int y = 60;
+        ctx.drawCenteredTextWithShadow(textRenderer, OFFSET_X, centerX, y, 0xFFFFFF);
+        y += LABEL_H + FIELD_H + LABEL_GAP;
+        ctx.drawCenteredTextWithShadow(textRenderer, OFFSET_Y, centerX, y, 0xFFFFFF);
+
+        super.render(ctx, mouseX, mouseY, delta);
     }
 }

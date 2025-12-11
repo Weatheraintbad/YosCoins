@@ -7,20 +7,16 @@ import net.fabricmc.loader.api.FabricLoader;
 import yoscoins.client.YosCoinsClient;
 import yoscoins.client.hud.YosCoinsHud;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public final class YosCoinsConfig {
     private static final File CONFIG_FILE = new File(
             FabricLoader.getInstance().getConfigDir().toFile(), "yoscoins-config.json");
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public int hudOffsetX = 0;   // 相对锚点 X 偏移（像素）
-    public int hudOffsetY = 0;   // 相对锚点 Y 偏移（像素）
-    public boolean hudTopRight = true; // true=右上角 false=左上角，右上角还是有点问题，会跑到界面外
-    public boolean hudEnabled = true;   //开关
+    public int  hudOffsetX = 0;   // 相对左上角 X 偏移（像素）
+    public int  hudOffsetY = 0;   // 相对左上角 Y 偏移（像素）
+    public boolean hudEnabled = true;   // 开关
 
     /* 统一入口：加载后自动刷新 HUD */
     public static YosCoinsConfig load() {
@@ -28,24 +24,23 @@ public final class YosCoinsConfig {
         if (CONFIG_FILE.exists()) {
             try (FileReader reader = new FileReader(CONFIG_FILE)) {
                 JsonObject json = com.google.gson.JsonParser.parseReader(reader).getAsJsonObject();
-                cfg.hudOffsetX  = json.get("hudOffsetX").getAsInt();
-                cfg.hudOffsetY  = json.get("hudOffsetY").getAsInt();
-                cfg.hudTopRight = json.get("hudTopRight").getAsBoolean();
+                if (json.has("hudOffsetX")) cfg.hudOffsetX = json.get("hudOffsetX").getAsInt();
+                if (json.has("hudOffsetY")) cfg.hudOffsetY = json.get("hudOffsetY").getAsInt();
+                // 旧存档里可能还有 hudTopRight，直接忽略即可
             } catch (Exception e) {
-                // 文件损坏问题，换成默认
+                // 文件损坏就用默认值
             }
         }
         cfg.save();
         return cfg;
     }
 
-
     public void save() {
         try (FileWriter writer = new FileWriter(CONFIG_FILE)) {
             JsonObject json = new JsonObject();
             json.addProperty("hudOffsetX", hudOffsetX);
             json.addProperty("hudOffsetY", hudOffsetY);
-            json.addProperty("hudTopRight", hudTopRight);
+            json.addProperty("hudEnabled", hudEnabled);
             GSON.toJson(json, writer);
         } catch (IOException e) {
             e.printStackTrace();

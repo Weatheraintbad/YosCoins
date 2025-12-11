@@ -9,10 +9,8 @@
   "item.yoscoins.copper_coin": "铜币",
   "item.yoscoins.silver_coin": "银币",
   "item.yoscoins.gold_coin":   "金币",
-  "screen.yoscoins.hud_config": "Yo的钱币 - HUD设置",
+  "screen.yoscoins.hud_config": "Yo‘s Coins - HUD设置",
   "screen.yoscoins.offset_x": "水平偏移（像素）",
   "screen.yoscoins.offset_y": "垂直偏移（像素）",
-  "screen.yoscoins.top_right": "右上角",
-  "screen.yoscoins.top_left": "左上角",
   "screen.yoscoins.save": "保存"
 }
