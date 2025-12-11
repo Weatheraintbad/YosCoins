@@ -34,7 +34,7 @@ After placing the piggy bank, you can deposit it by holding the coin right-click
 ### HUD可在模组菜单（modmenu）中对应的界面配置，可开关或调整HUD在屏幕显示的位置。
 The HUD can be configured in the corresponding interface within the Mod Menu, where you can enable/disable it or adjust its position on the screen.
 
-<img width="546" height="272" alt="5545b2d64dadcfd47835625ee0fd73f9" src="https://github.com/user-attachments/assets/fb3a6953-777c-4066-8804-093d34a6d24d" />
+<img width="792" height="417" alt="a612ba7bc8db24ca8200e8005d5eb8af" src="https://github.com/user-attachments/assets/56f9f1ac-aee7-4bba-8b04-05dbe95586d2" />
 
 ### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14，需要模组菜单[modmenu 7.2.2](https://modrinth.com/mod/modmenu)版本。
 Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported, [modmenu 7.2.2](https://modrinth.com/mod/modmenu) is required.
