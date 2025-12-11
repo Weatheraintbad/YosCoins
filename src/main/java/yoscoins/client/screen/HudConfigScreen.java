@@ -28,7 +28,7 @@ public class HudConfigScreen extends Screen {
 
     @Override
     protected void init() {
-        /* 1. 加载最新配置（内存里已经是单例） */
+        // 加载最新配置
         YosCoinsConfig cfg = YosCoinsClient.getConfig();
 
         offsetXField = new TextFieldWidget(textRenderer, width / 2 - 100, 60, 200, 20, OFFSET_X);
@@ -55,7 +55,7 @@ public class HudConfigScreen extends Screen {
                 }).dimensions(width / 2 - 100, 150, 200, 20).build();
         addDrawableChild(enabledBtn);
 
-        /* 2. 保存并立即刷新 HUD */
+        // 保存并立即刷新
         addDrawableChild(ButtonWidget.builder(
                 Text.translatable("screen.yoscoins.save"),
                 b -> {

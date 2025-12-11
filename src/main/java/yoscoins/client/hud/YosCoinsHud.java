@@ -22,7 +22,7 @@ public final class YosCoinsHud implements HudRenderCallback {
     private int cachedX, cachedY;
     private boolean cachedTopRight;
 
-    /* ----------- 实时统计 + 同帧复用 ----------- */
+    // 实时统计+同帧复用
     private final int[] counts = new int[3];
     private long lastSnapTick = -1;          // 版本号：客户端 tick
 
@@ -53,7 +53,7 @@ public final class YosCoinsHud implements HudRenderCallback {
         }
     }
 
-    /* ---------- 强制快照：深拷贝钱袋，隔离并发修改 ---------- */
+    // 强制快照：深拷贝钱袋，隔离并发修改
     private static SimpleInventory snapshotPouch(ItemStack pouchStack) {
         SimpleInventory raw = MoneyPouchItem.readInv(pouchStack);
         SimpleInventory snap = new SimpleInventory(raw.size());
@@ -62,7 +62,7 @@ public final class YosCoinsHud implements HudRenderCallback {
         return snap;
     }
 
-    /** 实时统计：同帧只算一次 */
+    // 实时统计：同帧只算一次，避免重复计算
     private void snapshotCoins() {
         // 防止重入
         if (isSnapshotInProgress) {
@@ -75,9 +75,8 @@ public final class YosCoinsHud implements HudRenderCallback {
         // 同一帧已采样，直接复用
         if (lastSnapTick == now) return;
 
-        // 如果最近有库存变化，并且在同一tick内，使用更稳定的逻辑
         if (now == lastInventoryChangeTick) {
-            // 在这种情况下，我们稍微延迟一帧更新，避免重复计算
+            // 在这种情况下，稍微延迟一帧更新，避免重复计算
             shouldUseCachedForThisFrame = true;
         }
 
@@ -96,8 +95,7 @@ public final class YosCoinsHud implements HudRenderCallback {
 
             int copper = 0, silver = 0, gold = 0;
 
-            // 使用优化的统计方法，避免重复遍历
-            // 先统计所有散装钱币
+            // 使用优化的统计方法，避免重复遍历，先统计所有散装钱币
             for (ItemStack s : mc.player.getInventory().main) {
                 if (s.isEmpty()) continue;
                 if (s.getItem() == YosCoinsItems.COPPER_COIN)          copper += s.getCount();
@@ -119,8 +117,7 @@ public final class YosCoinsHud implements HudRenderCallback {
                 else if (s.getItem() == YosCoinsItems.GOLD_COIN)   gold   += s.getCount();
             }
 
-            // 现在统计所有钱袋中的钱币
-            // 注意：我们只在散装钱币统计完成后才统计钱袋，避免重复
+            // 统计所有钱袋中的钱币，在散装钱币统计完成后才统计钱袋，避免重复
             for (ItemStack s : mc.player.getInventory().main) {
                 if (s.isEmpty()) continue;
                 if (s.getItem() == YosCoinsItems.MONEY_POUCH) {

@@ -28,7 +28,7 @@ public class PiggyBankBlock extends BlockWithEntity {
 
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    /* ---------- 原始形状（朝北） ---------- */
+    // 原始形状（朝北）
     private static final VoxelShape BASE = VoxelShapes.cuboid(
             0.1875, 0.00625, 0.1875,
             0.8125, 0.75,   1.0);
@@ -42,7 +42,7 @@ public class PiggyBankBlock extends BlockWithEntity {
         SHAPES.put(Direction.EAST,  flipFrontBack(rotateNorthTo(Direction.EAST)));
     }
 
-    /* 把 BASE 转到指定方向 */
+    // 把 BASE 转到指定方向
     private static VoxelShape rotateNorthTo(Direction target) {
         return switch (target) {
             case NORTH -> BASE;
@@ -53,7 +53,7 @@ public class PiggyBankBlock extends BlockWithEntity {
         };
     }
 
-    /* ---------- 旋转工具 ---------- */
+    // 旋转工具
     private static VoxelShape rotate90(VoxelShape src) {   // EAST
         return src.getBoundingBoxes().stream()
                 .map(b -> VoxelShapes.cuboid(
@@ -76,7 +76,7 @@ public class PiggyBankBlock extends BlockWithEntity {
                 .reduce(VoxelShapes.empty(), VoxelShapes::union);
     }
 
-    /* ---------- 前后翻转（沿 Z 轴 0.5 对称） ---------- */
+    // 前后翻转
     private static VoxelShape flipFrontBack(VoxelShape src) {
         return src.getBoundingBoxes().stream()
                 .map(b -> VoxelShapes.cuboid(
@@ -95,7 +95,7 @@ public class PiggyBankBlock extends BlockWithEntity {
         builder.add(FACING);
     }
 
-    /* 正面朝向玩家 */
+    // 模型正面朝向玩家
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         PlayerEntity pl = ctx.getPlayer();
@@ -103,7 +103,7 @@ public class PiggyBankBlock extends BlockWithEntity {
         return getDefaultState().with(FACING, face);
     }
 
-    /* ---------- 碰撞 / 轮廓 ---------- */
+    // 碰撞箱
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world,
                                       BlockPos pos, ShapeContext context) {
@@ -121,7 +121,7 @@ public class PiggyBankBlock extends BlockWithEntity {
         return false;
     }
 
-    /* ---------- 存钱 ---------- */
+    // 存钱功能
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos,
                               PlayerEntity player, Hand hand, BlockHitResult hit) {
