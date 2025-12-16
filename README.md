@@ -1,5 +1,10 @@
-### Yo's Coins是一个轻量化我的世界货币模组，为游戏添加了新的钱币、存钱罐、能收纳钱币且能在物品栏实时显示内容的钱袋，同时支持在HUD显示背包内钱币数量（包括钱袋内钱币），可与其他模组搭配构建服务器货币系统。
-Yo's Coins is a lightweight minecraft currency mod that adds three types of coins to the game, a piggy bank, a money pouch that can store coins and display the contents in the inventory in real time, and supports displaying the number of coins in the backpack (including the coins in the money pouch) on the HUD, and can be used with other mods to build server currency systems.
+<img width="1362" height="364" alt="screenshot (1)" src="https://github.com/user-attachments/assets/349efc18-10e6-43b9-a3eb-58d4a6fba5f0" />
+
+### Yo's Coins是一个轻量化我的世界货币模组。
+Yo's Coins is a lightweight minecraft currency mod.
+
+### 为游戏添加了新的钱币、存钱罐、钱袋，同时支持HUD显示，可与其他模组搭配构建服务器货币系统。
+Added new coins, piggy banks, and money bags to the game, and also supported HUD display, which can be used with other mods to build server currency systems.
 
 <img width="365" height="128" alt="b961b447a7886defa23443ebdd5ec9a5" src="https://github.com/user-attachments/assets/3a3aac64-f91b-4f6c-bedd-8890898a78da" />
 
@@ -28,8 +33,8 @@ Players can right-click on their money pouch to transfer coins from their in-gam
 
 <img width="286" height="208" alt="c68bcc0c6e9be89d87a1890f91c2ff57" src="https://github.com/user-attachments/assets/8758f38e-d33f-4169-a127-bb3b8c590d28" />
 
-### 存钱罐放置后手持钱币右键即可存入，存入后的钱币数量将不会显示，打破存钱罐后会以掉落物的形式返还。（就像真的一样！）
-After placing the piggy bank, you can deposit it by holding the coin right-click, and the number of coins after depositing will not be displayed, and it will be returned in the form of a drop after breaking the piggy bank. (Just like the real one!) 
+### 存钱罐放置后手持钱币右键即可存入，存入后的钱币数量将不会显示，打破存钱罐后会以掉落物的形式返还。
+After placing the piggy bank, you can deposit it by holding the coin right-click, and the number of coins after depositing will not be displayed, and it will be returned in the form of a drop after breaking the piggy bank.
 
 ### HUD可在模组菜单（modmenu）中对应的界面配置，可开关或调整HUD在屏幕显示的位置。
 The HUD can be configured in the corresponding interface within the Mod Menu, where you can enable/disable it or adjust its position on the screen.
