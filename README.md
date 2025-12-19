@@ -59,8 +59,8 @@ The HUD can be configured in the corresponding interface within the Mod Menu, wh
 <img width="500" height="263" alt="a612ba7bc8db24ca8200e8005d5eb8af" src="https://github.com/user-attachments/assets/56f9f1ac-aee7-4bba-8b04-05dbe95586d2" />
 </div>
 
-### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14，需要模组菜单[modmenu 7.2.2](https://modrinth.com/mod/modmenu)版本。
-Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 is supported, [modmenu 7.2.2](https://modrinth.com/mod/modmenu) is required.
+### 目前仅支持我的世界 JAVA 1.20.1，Fabric加载器 0.16.14 及以上版本，需要模组菜单[modmenu 7.2.2](https://modrinth.com/mod/modmenu)及以上版本。
+Currently, only Minecraft JAVA 1.20.1, Fabric loader 0.16.14 or higher is supported, [modmenu 7.2.2](https://modrinth.com/mod/modmenu) or higher is required.
 
 ### 感谢MC百科[不明情况的白](https://center.mcmod.cn/10635/)绘制的图标以及[Noobanidus](https://github.com/noobanidus)的存钱罐模型。
 Thanks to [不明情况的白](https://center.mcmod.cn/10635/) and [Noobanidus](https://github.com/noobanidus) for the icons and models.
